@@ -1,0 +1,14 @@
+﻿@model IEnumerable<_4MAT.Data.Game>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<table>
+    <tr><td>Winner</td><td>Loser</td><td>Points Gained</td></tr>
+    @foreach (var game in Model)
+    {
+        <tr><td>@game.RedPlayer.Name</td><td>@game.BluePlayer.Name</td><td>@(game.RedScore - game.BlueScore)</td></tr>
+    }
+</table>
+
+<button asp-action="LogGame">Log Game</button>
